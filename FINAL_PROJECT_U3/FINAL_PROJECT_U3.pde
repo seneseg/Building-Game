@@ -1,25 +1,37 @@
+import shiffman.box2d.*;
+
+float lastTime; 
+float StopWatchTime; 
+var box2d; 
 
 void setup()
 {
   size(700, 750);
-  
-   float[] time = new float[120]; 
-   
-   for(int i = 1; i > 0; i++)
-   {
-     time[0] = time[i]; 
-   }
-   
-   printArray(time); 
-   
+  box2d = new PBox2D(this); 
+  box2d.createWorld(); 
 }
 
 void draw()
 {
   background(255); 
-  int s = second(); 
-  line(s, 30, s, 50); 
   
-  
- 
+  box2d.setGravity(0, -10); 
+    
+  stopWatch(); 
+   if(StopWatchTime >= 120)
+  {
+    fill(255,0,0); 
+    text("TIME UP STOP", 250,250); 
+  }
+    
+  fill(0); 
+  text("TIME:", 19, 37); 
+  text(StopWatchTime, 20, 50);
 } 
+
+void stopWatch()
+{
+
+  StopWatchTime = millis() - lastTime; 
+  StopWatchTime /= 1000; 
+}
