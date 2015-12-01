@@ -2,20 +2,20 @@ import shiffman.box2d.*;
 
 float lastTime; 
 float StopWatchTime; 
-var box2d; 
+float box2d; 
 
 void setup()
 {
   size(700, 750);
-  box2d = new PBox2D(this); 
-  box2d.createWorld(); 
+  //box2d = new PBox2D(this); 
+  //box2d.createWorld(); 
 }
 
 void draw()
 {
   background(255); 
   
-  box2d.setGravity(0, -10); 
+  //box2d.setGravity(0, -9.8); 
     
   stopWatch(); 
    if(StopWatchTime >= 120)
