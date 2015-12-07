@@ -1,7 +1,7 @@
 /*import shiffman.box2d.*;
-import org.jbox2d.collision.shapes.*; 
-import org.jbox2d.common.*; 
-import org.jbox2d.dynamics.*; */
+ import org.jbox2d.collision.shapes.*; 
+ import org.jbox2d.common.*; 
+ import org.jbox2d.dynamics.*; */
 
 import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
@@ -21,7 +21,7 @@ void setup()
   size(700, 750);
   box2d = new Box2DProcessing(this); 
   box2d.createWorld(); 
-  boxes = new ArrayList<Boxes>();   
+  boxes = new ArrayList<Boxes>();
 }
 
 void draw()
@@ -29,13 +29,13 @@ void draw()
   background(255); 
   box2d.step();
   b.display(); 
-  
-  if(mousePressed)
+
+  if (mousePressed)
   {
     Boxes p = new Boxes(mouseX, mouseY);
-    boxes.add(p); 
+    boxes.add(p);
   }
-  
+
   //STOPWATCH
   stopWatch(); 
   if (StopWatchTime >= 120)
